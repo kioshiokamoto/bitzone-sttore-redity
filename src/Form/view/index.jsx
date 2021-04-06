@@ -1,7 +1,4 @@
-import React, { useEffect } from 'react';
-import { useRender,render } from 'redity';
-import { Indexs, Keys } from '../constants';
-import { state_form } from '../storage';
+import React from 'react';
 import { Container } from './Form.style';
 import Steps from './Steps';
 

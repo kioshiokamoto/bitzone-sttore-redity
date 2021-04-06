@@ -1,24 +1,10 @@
 import React from 'react';
-import { render, useRender } from 'redity';
-import { Indexs, Keys } from '../../constants';
+import useThirdStep from '../../hooks/useThirdStep';
 import { state_errors, state_form } from '../../storage';
 import { Button, ErrorDiv, FormStep, H2, H3, InputContainer, InputText, Label, Select } from '../Form.style';
 
 const ThirdStep = () => {
-	useRender(Keys.STEPS, Indexs.THIRD);
-
-	const handleChange = (e) => {
-		state_form({ ...state_form(), [e.target.name]: e.target.value });
-		render(Keys.STEPS, Indexs.THIRD);
-	};
-
-	const handlePreviusStep = (e) => {
-		e.preventDefault();
-
-		state_form({ ...state_form(), step: state_form().step - 1 });
-		render(Keys.STEPS);
-	};
-
+	const {handleChange, handlePreviusStep} = useThirdStep();
 	return (
 		<FormStep>
 			<H2>Formulario de registro</H2>
