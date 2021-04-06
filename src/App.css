@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&display=swap');
+*,body,html{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+  display: flex;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.asideBar{
+  width: 300px;
+  height: 100vh;
+  background: #1f1f1f;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.asideBar > a {
+  font-size: 2rem;
+  color: #fefefe;
+  text-decoration: none;
+  font-family: 'Sora',sans-serif;
+  padding: 8px 0 0 0;
+  margin-bottom: 8px;
+  transition:all 0.5s ease-in-out;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.asideBar > a:hover{
+  color: #aeaeae;
+  
+}
+.asideBar > .selected{
+  color: #aeaeae;
+  border-bottom: 1px solid #aeaeae;
 }
