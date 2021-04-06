@@ -10,9 +10,11 @@ const SecondStep = () => {
 	
 	useEffect(() => {
 		if(state_form().step===1){
+			console.log(`ingresa`)
 			render(Keys.STEPS, Indexs.FIRST)
 		}
 		if(state_form().step===2){
+			console.log(`ingresa2`)
 			render(Keys.STEPS, Indexs.SECOND)
 		}	
 

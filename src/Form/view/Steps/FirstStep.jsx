@@ -15,18 +15,11 @@ const FirstStep = () => {
 	const handleNextStep = (e)=>{
 		e.preventDefault();
 		state_form({...state_form(),step:state_form().step+1});
-		//console.log(state_form());
-		render(Keys.STEPS, Indexs.SECOND);
+		//console.log(state_form().step);
+		//render(Keys.STEPS, Indexs.SECOND);
+		render(Keys.STEPS);
 	}
-	/* useEffect(() => {
-		if(state_form().step===1){
-			render(Keys.STEPS, Indexs.FIRST)
-		}
-		if(state_form().step===2){
-			render(Keys.STEPS, Indexs.SECOND)
-		}	
-
-	}, [state_form().step]) */
+	
 	return (
 		<FormStep>
 			<H2>Formulario de registro</H2>
