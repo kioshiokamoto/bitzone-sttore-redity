@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { render, useRender } from 'redity';
 import { Indexs, Keys } from '../../constants';
-import { state_form } from '../../storage';
-import { Button, FormStep, H2, H3, InputContainer, InputText, Label } from '../Form.style';
+import { state_errors, state_form } from '../../storage';
+import { Button, ErrorDiv, FormStep, H2, H3, InputContainer, InputText, Label } from '../Form.style';
 
 const SecondStep = () => {
 	useRender(Keys.STEPS, Indexs.SECOND);
@@ -12,18 +12,22 @@ const SecondStep = () => {
 		render(Keys.STEPS, Indexs.SECOND);
 	};
 
+	const validateStepTwo = !(state_form().email.trim().length < 3) && !(state_form().phone.trim().length < 3);
+
 	const handleNextStep = (e) => {
 		e.preventDefault();
-		state_form({ ...state_form(), step: state_form().step + 1 });
-		//console.log(state_form().step);
-		//render(Keys.STEPS, Indexs.SECOND);
+		if (validateStepTwo) {
+			state_errors({ ...state_errors(), errorTwo: false });
+			state_form({ ...state_form(), step: state_form().step + 1 });
+		} else {
+			state_errors({ ...state_errors(), errorTwo: true });
+		}
 		render(Keys.STEPS);
 	};
+
 	const handlePreviusStep = (e) => {
 		e.preventDefault();
 		state_form({ ...state_form(), step: state_form().step - 1 });
-		//console.log(state_form());
-		//render(Keys.STEPS, Indexs.SECOND);
 		render(Keys.STEPS);
 	};
 
@@ -38,6 +42,7 @@ const SecondStep = () => {
 
 				<Label htmlFor="phone">Celular:</Label>
 				<InputText type="number" id="phone" name="phone" value={state_form().phone} onChange={handleChange} />
+				{state_errors().errorTwo && <ErrorDiv>Se deben completar los campos correctamente</ErrorDiv>}
 			</InputContainer>
 			<div style={{ display: 'flex', width: '100%' }}>
 				<Button onClick={handlePreviusStep}>Anterior</Button>

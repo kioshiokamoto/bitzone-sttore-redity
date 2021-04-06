@@ -6,12 +6,12 @@ import { useEffect } from 'react';
 
 export default function useCount (){
     useRender(Keys.CONTROLS);
-
+    const count = state_count().count
     useEffect(() => {
         render(Keys.CONTROLS)
-    }, [state_count().count])
+    }, [count])
 
     return{
-        count:state_count().count
+        count
     }
 }

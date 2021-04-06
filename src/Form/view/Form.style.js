@@ -77,3 +77,24 @@ export const InputText = styled.input`
 	font-size: 18px;
     color:#3f3f3f;
 `
+export const Select = styled.select`
+	font-family:'Sora',sans-serif;
+	color:#3f3f3f;
+	width:100%;
+	padding:0.3rem 0.5rem;
+	font-size: 18px;
+	font-weight: 500;
+	border-radius: 5px;
+	outline:none;
+	background:#fff;
+`
+export const ErrorDiv = styled.div`
+	padding: 0.5rem 1rem;
+	width:330px;
+	background: #7a0012;
+	border-radius: 4px;
+	margin-top:1rem;
+	margin-bottom:-0.5rem;
+	color: #fff;
+
+`

@@ -12,5 +12,11 @@ export const state_form = sttore({
     email:'',
     phone:'',
     occupation:'',
-    genre:'Hombre'
+    genre:'Hombre',
+    
+})
+export const state_errors=sttore({
+    errorOne:false,
+    errorTwo:false,
+    errorThree:false
 })
