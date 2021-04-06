@@ -7,9 +7,10 @@
 
 .container{
   display: flex;
+  width: 100vw;
 }
 .asideBar{
-  width: 300px;
+  width: 350px;
   height: 100vh;
   background: #1f1f1f;
   display: flex;
@@ -34,4 +35,8 @@
 .asideBar > .selected{
   color: #aeaeae;
   border-bottom: 1px solid #aeaeae;
+}
+.content{
+  width: 100%;
+  height: 100%;
 }

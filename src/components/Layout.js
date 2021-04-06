@@ -1,13 +1,13 @@
-import React from 'react'
-import Nav from './Nav'
+import React from 'react';
+import Nav from './Nav';
 
-const Layout = ({children}) => {
-    return (
-        <div className="container">
-            <Nav />
-            {children}
-        </div>
-    )
-}
+const Layout = ({ children }) => {
+	return (
+		<div className="container">
+			<Nav />
+			<div className="content">{children}</div>
+		</div>
+	);
+};
 
-export default Layout
+export default Layout;
