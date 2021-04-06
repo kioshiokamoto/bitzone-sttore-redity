@@ -10,5 +10,7 @@ export const state_form = sttore({
     firstName:'',
     lastName:'',
     email:'',
-    phone:''
+    phone:'',
+    occupation:'',
+    genre:'Hombre'
 })

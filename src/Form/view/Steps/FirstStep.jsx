@@ -7,11 +7,12 @@ import { render, useRender } from 'redity';
 
 const FirstStep = () => {
 	useRender(Keys.STEPS, Indexs.FIRST);
+	// TODO: Modularizar handleChange
 	const handleChange = (e) => {
 		state_form({...state_form(),[e.target.name]:e.target.value})
 		render(Keys.STEPS, Indexs.FIRST);
 	};
-	
+	// TODO: Modularizar handleNextStep / handlePreviusStep
 	const handleNextStep = (e)=>{
 		e.preventDefault();
 		state_form({...state_form(),step:state_form().step+1});

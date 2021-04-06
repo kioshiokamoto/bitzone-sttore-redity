@@ -13,5 +13,6 @@ export const Keys = {
 
 export const Indexs = {
   FIRST: 'FIRST',
-  SECOND: 'SECOND'
+  SECOND: 'SECOND',
+  THIRD:'THIRD'
 }
